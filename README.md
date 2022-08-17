@@ -1,7 +1,7 @@
-# cART Market DApp
+# Near JustArt Market DApp
 An Art market where people can buy and sell art items.
 
-[Demo Link](https://c-art-market.vercel.app/)
+[Demo Link](near-justart-market.vercel.app)
 
 Features
 - Users can create new listings, where they set the upload the data on the art item.
@@ -10,7 +10,7 @@ Features
 
 #### Please Note: 
 Due to deployment issues, I had to move the contract files to the a new repo.
-[repo link](##)
+[repo link](https://github.com/Houselearn/Near-justart-market-contract)
 
 # Next.js + Tailwind CSS Example
 
