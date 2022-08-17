@@ -4,14 +4,7 @@ import { Dropdown, Stack, Spinner } from "react-bootstrap";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-interface Props {
-  address: string,
-  amount: string,
-  symbol: string,
-  destroy: Function,
-}
-
-const Wallet:React.FC<Props> = ({ address, amount, symbol, destroy }) => {
+export function Wallet({ address, amount, symbol, destroy }: { address: string; amount: string; symbol: string; destroy: Function }) {
   if (address) {
     return (
       <>
@@ -60,5 +53,3 @@ const Wallet:React.FC<Props> = ({ address, amount, symbol, destroy }) => {
 
   return null;
 };
-
-export default Wallet;

@@ -1,24 +1,24 @@
 import logo from 'lib/assets/logo.svg';
 import { useNearContext } from 'lib/utils/nearweb3';
 import { Fragment, useEffect, useCallback, useState } from 'react';
-import Wallet from '../wallet/wallet';
+import { Wallet } from 'components';
 import Link from 'next/link';
 
 export function Header() {
-  const {login, logout, walletConnection, initialize, getBalance, getAccountId } = useNearContext();
+  const { login, logout, walletConnection, initialize, getBalance, getAccountId } = useNearContext();
   const [balance, setBalance] = useState(null);
   const [accountId, setAccountId] = useState("");
 
-  const initDApp = useCallback( async () => {
+  const initDApp = useCallback(async () => {
     await initialize()
   }, []);
 
-  const getAccount = useCallback( async () => { 
-    if(walletConnection !== null) {
+  const getAccount = useCallback(async () => {
+    if (walletConnection !== null) {
       const account = await getAccountId();
       setAccountId(account);
 
-      if(account){
+      if (account) {
         const balance = await getBalance();
         setBalance(balance)
       }
@@ -30,12 +30,12 @@ export function Header() {
     logout();
   }
 
-  useEffect( () => {
-    if(walletConnection === null){
+  useEffect(() => {
+    if (walletConnection === null) {
       initDApp();
     }
     getAccount();
-}, [initDApp, walletConnection, getAccount])
+  }, [initDApp, walletConnection, getAccount])
 
   return (
     <div className="bg-gray-900 border-b border-gray-800 text-white text-sm font-mono">
@@ -55,13 +55,13 @@ export function Header() {
               <Link href="/my-items">
                 <a>My Items</a>
               </Link>
-                <Wallet
-										address={accountId}
-										amount={balance}
-										symbol="NEAR"
-										destroy={disconnect}
-									/>          
-              </Fragment>
+              <Wallet
+                address={accountId}
+                amount={balance}
+                symbol="NEAR"
+                destroy={disconnect}
+              />
+            </Fragment>
           ) : (
             <a onClick={login} className="border border-red-500 px-3 py-2">Connect Wallet</a>
           )}

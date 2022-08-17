@@ -1,7 +1,7 @@
 import cx from 'classnames';
 import { Loader } from 'react-feather';
 
-export function Button({ block=false, loading=false, children, ...rest }) {
+export function Button({ block = false, loading = false, children, ...rest }) {
   return (
     <button
       className={cx(

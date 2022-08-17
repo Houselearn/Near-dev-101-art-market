@@ -15,15 +15,15 @@ dayjs.extend(localizedFormat);
 
 function App({ Component, pageProps }) {
   return (
-      <NearProvider>
-        <Head>
-          <title>cArt Market</title>
-          
-          <link rel="icon" type="image/png" href={favicon.src} />
-        </Head>
-        <Component {...pageProps} />
-        <ToastContainer />
-      </NearProvider>
+    <NearProvider>
+      <Head>
+        <title>cArt Market</title>
+
+        <link rel="icon" type="image/png" href={favicon.src} />
+      </Head>
+      <Component {...pageProps} />
+      <ToastContainer />
+    </NearProvider>
   )
 }
 

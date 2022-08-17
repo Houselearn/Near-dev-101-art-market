@@ -11,29 +11,29 @@ function MyListings() {
 
   const { accountId, contract } = useNearContext();
 
-    // function to get the list of items
+  // function to get the list of items
   const retrieveItems = useCallback(async () => {
-      if(contract === null){
-        return
+    if (contract === null) {
+      return
+    }
+    try {
+      setLoading(true);
+      const userItemsIds = await getUserItems(accountId, contract);
+      const userItemsArr: Item[] = [];
+      for (let i = 0; i < userItemsIds.length; i++) {
+        const item = await getItem(userItemsIds[i], contract);
+        userItemsArr.push(item);
       }
-      try {
-        setLoading(true);
-        const userItemsIds = await getUserItems(accountId ,contract);
-        const userItemsArr: Item[] = [];
-        for (let i = 0; i < userItemsIds.length; i++ ){
-          const item = await getItem(userItemsIds[i], contract);
-          userItemsArr.push(item);
-        }
-        setItems(userItemsArr);
-      } catch (error) {
-        console.log({ error });
-      } finally {
-        setLoading(false);
-      }
+      setItems(userItemsArr);
+    } catch (error) {
+      console.log({ error });
+    } finally {
+      setLoading(false);
+    }
   }, [contract]);
 
   useEffect(() => {
-    if(accountId !== null){
+    if (accountId !== null) {
       retrieveItems();
     }
   }, [retrieveItems, accountId])

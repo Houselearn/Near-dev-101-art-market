@@ -1,4 +1,4 @@
-{  
+{
   "name": "cartmarket",
   "version": "0.1.0",
   "private": true,
@@ -7,9 +7,6 @@
     "build": "next build"
   },
   "dependencies": {
-    "@apollo/client": "^3.4.16",
-    "@jswork/next": "^1.0.9",
-    "@jswork/next-local-storage": "^1.0.4",
     "@types/react": "^17.0.27",
     "bootstrap": "^5.2.0",
     "bootstrap-icons": "^1.9.1",
@@ -17,7 +14,6 @@
     "classnames": "^2.3.1",
     "dayjs": "^1.10.7",
     "fs": "^0.0.1-security",
-    "graphql": "^15.6.1",
     "lodash": "^4.17.21",
     "near-api-js": "^0.43.1",
     "next": "^11.1.2",
@@ -32,9 +28,7 @@
     "reactjs-localstorage": "^1.0.1",
     "typescript": "^4.4.3",
     "use-onclickoutside": "^0.4.1",
-    "uuid": "^8.3.2",
-    "web3": "^1.6.0",
-    "web3modal": "^1.9.4"
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@types/nprogress": "^0.2.0",

@@ -16,7 +16,7 @@ export function ItemCard({ item }: { item: Item }) {
           <hr className="mt-2.5 mb-3 border-gray-700 border-dashed" />
           <span className="font-mono block">
             <span className="text-sm">
-            {utils.format.formatNearAmount(item.price)} NEAR
+              {utils.format.formatNearAmount(item.price)} NEAR
             </span>
           </span>
         </span>

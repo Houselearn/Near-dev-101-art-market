@@ -2,7 +2,7 @@ import { Button, Input, Layout, Select } from "components";
 import { useNearContext } from "lib/utils/nearweb3";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import {addNewItem, getItem} from "../lib/utils/market"
+import { addNewItem, getItem } from "../lib/utils/market"
 import { range } from 'lodash';
 import { useRouter } from "next/router";
 import { toast } from "react-toastify";
@@ -16,23 +16,23 @@ function Create() {
   const { contract } = useNearContext();
 
   async function handleCreate(params) {
-    let id: string ="/"
-    if(contract === null) {
+    let id: string = "/"
+    if (contract === null) {
       return
     }
     if (!accountId) {
       await login();
-    } 
+    }
     try {
       setLoading(true)
-      id = await addNewItem({name:params.name, description:params.description, image:params.image, location:params.location, price:params.price}, contract)
-      toast.success('Listing created') 
-    } catch(e) {
+      id = await addNewItem({ name: params.name, description: params.description, image: params.image, location: params.location, price: params.price }, contract)
+      toast.success('Listing created')
+    } catch (e) {
       console.log({ e });
       toast.error("Failed to create a product.");
     } finally {
       setLoading(false)
-      router.push(`/items/${id}`); 
+      router.push(`/items/${id}`);
     }
   }
 
@@ -69,7 +69,7 @@ function Create() {
               </div>
               <div>
                 <Input
-                
+
                   label="Item Location"
                   {...register('location', { required: true })}
                 />

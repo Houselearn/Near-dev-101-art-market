@@ -6,8 +6,8 @@ function ItemDetails() {
   const router = useRouter();
   const id = router.query.id as string;
 
-  return(
-    <Details id={id}/>
+  return (
+    <Details id={id} />
   )
 }
 
