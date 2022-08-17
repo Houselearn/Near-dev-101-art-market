@@ -13,10 +13,10 @@ export async function addNewItem(item: Item, contract: Contract) {
     return item.id;
 }
 
-export function relistItem(itemId: string, newPrice: string, contract: Contract) {
+export function relistItem(itemId: string, newPrice: string, newLocation: string, contract: Contract) {
     newPrice = parseNearAmount(newPrice + "");
     //@ts-ignore
-    return contract.relistItem({ itemId, newPrice });
+    return contract.relistItem({ itemId, newPrice, newLocation });
 }
 
 export async function buyItem({ itemId, price }, contract: Contract) {

@@ -43,7 +43,7 @@ export function Header() {
         <div className="flex-1 mb-3 md:mb-0">
           <a href="/">
             <img src={logo.src} className={"filter"} style={{ height: 22 }} />
-            <h6>cArt Market</h6>
+            <h6>justArt Market</h6>
           </a>
         </div>
         <div className="flex space-x-6 items-center">

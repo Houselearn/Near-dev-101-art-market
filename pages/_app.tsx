@@ -17,7 +17,7 @@ function App({ Component, pageProps }) {
   return (
     <NearProvider>
       <Head>
-        <title>cArt Market</title>
+        <title>justArt Market</title>
 
         <link rel="icon" type="image/png" href={favicon.src} />
       </Head>

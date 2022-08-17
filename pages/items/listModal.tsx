@@ -15,7 +15,7 @@ function ListItemModal({ id, contract, handleClose, update }: { update: Function
     async function handleCreate(params) {
         try {
             setLoading(true)
-            await relistItem(id, params.price, contract)
+            await relistItem(id, params.price, params.location, contract)
             toast.success('Item relisted')
         } catch (e) {
             console.log({ e });
@@ -39,6 +39,13 @@ function ListItemModal({ id, contract, handleClose, update }: { update: Function
                     <hr className="my-8" />
                     <form onSubmit={handleSubmit(handleCreate)}>
                         <div className="space-y-6">
+                            <div>
+                                <Input
+                                    type="text"
+                                    label="Location"
+                                    {...register('location', { required: true })}
+                                />
+                            </div>
                             <div>
                                 <Input
                                     type="number"
