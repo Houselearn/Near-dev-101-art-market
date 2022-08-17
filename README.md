@@ -1,7 +1,7 @@
 # Near JustArt Market DApp
 An Art market where people can buy and sell art items.
 
-[Demo Link](near-justart-market.vercel.app)
+[Demo Link](https://near-justart-market.vercel.app/)
 
 Features
 - Users can create new listings, where they set the upload the data on the art item.
